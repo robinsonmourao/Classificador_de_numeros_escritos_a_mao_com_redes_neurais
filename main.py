@@ -66,8 +66,8 @@ while os.path.isfile(f"digits/digit{image_number}.png"):
         # Tem que inverter pois o default é white on black e não black on white
         img = np.invert(np.array([img]))
         np.array([img])
-        prediction = model.predicts(img)
-        print(f"O numero é provavelmente um {np.argmax(prediction)}")
+        prediction = model.predict(img)
+        print(f"O numero é provavelmente {np.argmax(prediction)}")
         plt.imshow(img[0], cmap=plt.cm.binary)
         plt.show()
     except:
